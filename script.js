@@ -4,6 +4,7 @@ const nav = document.querySelector(".nav");
 const navLinks = nav ? Array.from(nav.querySelectorAll('a[href^="#"]')) : [];
 const siteHeader = document.querySelector(".site-header");
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const mobileNav = document.querySelector(".mobile-nav");
 let navScrollLockUntil = 0;
 
 function closeMobileMenu() {
@@ -22,7 +23,7 @@ if (siteHeader && mobileMenuToggle) {
   });
 
   document.addEventListener("click", (event) => {
-    if (!siteHeader.classList.contains("is-menu-open") || siteHeader.contains(event.target)) {
+    if (!siteHeader.classList.contains("is-menu-open") || siteHeader.contains(event.target) || mobileNav?.contains(event.target)) {
       return;
     }
 
