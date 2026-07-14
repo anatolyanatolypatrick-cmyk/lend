@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" preserveAspectRatio="none">
+  <defs>
+    <filter id="soft-brush" x="-20%" y="-25%" width="140%" height="150%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <mask id="grid-softness">
+      <rect width="1600" height="780" fill="#fff"/>
+      <g fill="#000" filter="url(#soft-brush)">
+        <ellipse cx="390" cy="255" rx="158" ry="68" opacity=".44"/>
+        <ellipse cx="985" cy="330" rx="208" ry="92" opacity=".34"/>
+        <ellipse cx="1260" cy="520" rx="146" ry="78" opacity=".46"/>
+        <ellipse cx="670" cy="680" rx="220" ry="54" opacity=".34"/>
+      </g>
+    </mask>
+  </defs>
+  <g fill="none" stroke="#55b9ef" stroke-opacity=".2" stroke-width="1" mask="url(#grid-softness)">
+    <!-- Ceiling recedes into the centre. -->
+    <path d="M0 0H1600M52 30H1548M104 60H1496M156 90H1444M208 120H1392M260 150H1340"/>
+    <path d="M0 0L260 150M160 0L368 150M320 0L476 150M480 0L584 150M640 0L692 150M800 0V150M960 0L908 150M1120 0L1016 150M1280 0L1124 150M1440 0L1232 150M1600 0L1340 150"/>
+    <!-- Flat rear wall. -->
+    <path d="M260 150H1340M260 210H1340M260 270H1340M260 330H1340M260 390H1340M260 450H1340M260 510H1340M260 570H1340"/>
+    <path d="M260 150V570M368 150V570M476 150V570M584 150V570M692 150V570M800 150V570M908 150V570M1016 150V570M1124 150V570M1232 150V570M1340 150V570"/>
+    <!-- Floor expands towards the viewer. -->
+    <path d="M260 570H1340M208 612H1392M156 654H1444M104 696H1496M52 738H1548M0 780H1600"/>
+    <path d="M260 570L0 780M368 570L160 780M476 570L320 780M584 570L480 780M692 570L640 780M800 570V780M908 570L960 780M1016 570L1120 780M1124 570L1280 780M1232 570L1440 780M1340 570L1600 780"/>
+  </g>
+</svg>

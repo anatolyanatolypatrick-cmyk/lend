@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" fill="none">
+  <defs>
+    <linearGradient id="fade-a" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#6d8ba1" stop-opacity=".48"/>
+      <stop offset=".38" stop-color="#6d8ba1" stop-opacity=".25"/>
+      <stop offset=".72" stop-color="#6d8ba1" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade-b" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#6d8ba1" stop-opacity=".42"/>
+      <stop offset=".22" stop-color="#6d8ba1" stop-opacity=".27"/>
+      <stop offset=".5" stop-color="#6d8ba1" stop-opacity=".06"/>
+      <stop offset=".78" stop-color="#6d8ba1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fade-c" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#6d8ba1" stop-opacity=".46"/>
+      <stop offset=".54" stop-color="#6d8ba1" stop-opacity=".22"/>
+      <stop offset=".86" stop-color="#6d8ba1" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fill-1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".13"/><stop offset=".34" stop-color="#6d8ba1" stop-opacity=".065"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".11"/><stop offset=".52" stop-color="#6d8ba1" stop-opacity=".055"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-3" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".15"/><stop offset=".43" stop-color="#6d8ba1" stop-opacity=".06"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-4" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".1"/><stop offset=".61" stop-color="#6d8ba1" stop-opacity=".045"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-5" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".14"/><stop offset=".29" stop-color="#6d8ba1" stop-opacity=".07"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-6" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".12"/><stop offset=".47" stop-color="#6d8ba1" stop-opacity=".05"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-7" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".135"/><stop offset=".58" stop-color="#6d8ba1" stop-opacity=".045"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-8" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".105"/><stop offset=".38" stop-color="#6d8ba1" stop-opacity=".055"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-9" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".145"/><stop offset=".5" stop-color="#6d8ba1" stop-opacity=".055"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-10" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".115"/><stop offset=".65" stop-color="#6d8ba1" stop-opacity=".04"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-11" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".13"/><stop offset=".41" stop-color="#6d8ba1" stop-opacity=".06"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-12" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".1"/><stop offset=".56" stop-color="#6d8ba1" stop-opacity=".05"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-13" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".15"/><stop offset=".32" stop-color="#6d8ba1" stop-opacity=".07"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-14" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".12"/><stop offset=".49" stop-color="#6d8ba1" stop-opacity=".05"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-15" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".14"/><stop offset=".6" stop-color="#6d8ba1" stop-opacity=".045"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-16" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".11"/><stop offset=".44" stop-color="#6d8ba1" stop-opacity=".055"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+    <linearGradient id="fill-17" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d8ba1" stop-opacity=".135"/><stop offset=".54" stop-color="#6d8ba1" stop-opacity=".045"/><stop offset="1" stop-color="#6d8ba1" stop-opacity="0"/></linearGradient>
+  </defs>
+  <style>
+    @keyframes profit-bar-in { to { opacity: 1; transform: scaleY(1); } }
+    @keyframes profit-mark-in { to { opacity: 1; } }
+    g:nth-of-type(1) rect, g:nth-of-type(2) path {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      transform: scaleY(.06);
+      animation: profit-bar-in .48s cubic-bezier(.2,.78,.22,1) forwards;
+    }
+    g:nth-of-type(1) rect:nth-child(1), g:nth-of-type(2) path:nth-child(1) { animation-delay: .08s; }
+    g:nth-of-type(1) rect:nth-child(2), g:nth-of-type(2) path:nth-child(2) { animation-delay: .14s; }
+    g:nth-of-type(1) rect:nth-child(3), g:nth-of-type(2) path:nth-child(3) { animation-delay: .20s; }
+    g:nth-of-type(1) rect:nth-child(4), g:nth-of-type(2) path:nth-child(4) { animation-delay: .26s; }
+    g:nth-of-type(1) rect:nth-child(5), g:nth-of-type(2) path:nth-child(5) { animation-delay: .32s; }
+    g:nth-of-type(1) rect:nth-child(6), g:nth-of-type(2) path:nth-child(6) { animation-delay: .38s; }
+    g:nth-of-type(1) rect:nth-child(7), g:nth-of-type(2) path:nth-child(7) { animation-delay: .44s; }
+    g:nth-of-type(1) rect:nth-child(8), g:nth-of-type(2) path:nth-child(8) { animation-delay: .50s; }
+    g:nth-of-type(1) rect:nth-child(9), g:nth-of-type(2) path:nth-child(9) { animation-delay: .56s; }
+    g:nth-of-type(1) rect:nth-child(10), g:nth-of-type(2) path:nth-child(10) { animation-delay: .62s; }
+    g:nth-of-type(1) rect:nth-child(11), g:nth-of-type(2) path:nth-child(11) { animation-delay: .68s; }
+    g:nth-of-type(1) rect:nth-child(12), g:nth-of-type(2) path:nth-child(12) { animation-delay: .74s; }
+    g:nth-of-type(1) rect:nth-child(13), g:nth-of-type(2) path:nth-child(13) { animation-delay: .80s; }
+    g:nth-of-type(1) rect:nth-child(14), g:nth-of-type(2) path:nth-child(14) { animation-delay: .86s; }
+    g:nth-of-type(1) rect:nth-child(15), g:nth-of-type(2) path:nth-child(15) { animation-delay: .92s; }
+    g:nth-of-type(1) rect:nth-child(16), g:nth-of-type(2) path:nth-child(16) { animation-delay: .98s; }
+    g:nth-of-type(1) rect:nth-child(17), g:nth-of-type(2) path:nth-child(17) { animation-delay: 1.04s; }
+    g:nth-of-type(3), g:nth-of-type(4) { opacity: 0; animation: profit-mark-in .35s ease 1.16s forwards; }
+  </style>
+
+  <g>
+    <rect x="4" y="365" width="27" height="56" fill="url(#fill-1)"/>
+    <rect x="50" y="294" width="27" height="116" fill="url(#fill-2)"/>
+    <rect x="96" y="252" width="27" height="146" fill="url(#fill-3)"/>
+    <rect x="142" y="268" width="27" height="121" fill="url(#fill-4)"/>
+    <rect x="188" y="220" width="27" height="145" fill="url(#fill-5)"/>
+    <rect x="234" y="295" width="27" height="107" fill="url(#fill-6)"/>
+    <rect x="280" y="257" width="27" height="124" fill="url(#fill-7)"/>
+    <rect x="326" y="181" width="27" height="156" fill="url(#fill-8)"/>
+    <rect x="372" y="194" width="27" height="150" fill="url(#fill-9)"/>
+    <rect x="418" y="180" width="27" height="143" fill="url(#fill-10)"/>
+    <rect x="464" y="126" width="27" height="162" fill="url(#fill-11)"/>
+    <rect x="510" y="116" width="27" height="160" fill="url(#fill-12)"/>
+    <rect x="556" y="58" width="27" height="174" fill="url(#fill-13)"/>
+    <rect x="602" y="125" width="27" height="161" fill="url(#fill-14)"/>
+    <rect x="648" y="148" width="27" height="158" fill="url(#fill-15)"/>
+    <rect x="694" y="113" width="27" height="163" fill="url(#fill-16)"/>
+    <rect x="732" y="82" width="26" height="156" fill="url(#fill-17)"/>
+  </g>
+
+  <g stroke-width="1">
+    <path d="M4 421V365H31V421" stroke="url(#fade-b)"/>
+    <path d="M50 410V294H77V410" stroke="url(#fade-a)"/>
+    <path d="M96 398V252H123V398" stroke="url(#fade-c)"/>
+    <path d="M142 389V268H169V389" stroke="url(#fade-b)"/>
+    <path d="M188 365V220H215V365" stroke="url(#fade-a)"/>
+    <path d="M234 402V295H261V402" stroke="url(#fade-b)"/>
+    <path d="M280 381V257H307V381" stroke="url(#fade-c)"/>
+    <path d="M326 337V181H353V337" stroke="url(#fade-a)"/>
+    <path d="M372 344V194H399V344" stroke="url(#fade-b)"/>
+    <path d="M418 323V180H445V323" stroke="url(#fade-c)"/>
+    <path d="M464 288V126H491V288" stroke="url(#fade-b)"/>
+    <path d="M510 276V116H537V276" stroke="url(#fade-a)"/>
+    <path d="M556 232V58H583V232" stroke="url(#fade-c)"/>
+    <path d="M602 286V125H629V286" stroke="url(#fade-b)"/>
+    <path d="M648 306V148H675V306" stroke="url(#fade-a)"/>
+    <path d="M694 276V113H721V276" stroke="url(#fade-c)"/>
+    <path d="M732 238V82H758V238" stroke="url(#fade-b)"/>
+  </g>
+
+  <g stroke="#6d8ba1" stroke-opacity=".3" stroke-width="2">
+    <circle cx="198" cy="172" r="22"/>
+    <circle cx="258" cy="438" r="22"/>
+  </g>
+  <g fill="#6d8ba1" fill-opacity=".35">
+    <path d="M185 165L198 181L211 165L198 172Z"/>
+    <path d="M245 445L258 429L271 445L258 438Z"/>
+  </g>
+
+</svg>
