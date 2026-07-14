@@ -47,6 +47,7 @@ function updateHeaderTheme() {
   const isOnLightSurface = Boolean(underHeader?.closest(".light-surface"));
 
   siteHeader.classList.toggle("is-on-light", isOnLightSurface);
+  mobileNav?.classList.toggle("is-on-light", isOnLightSurface);
 }
 
 function moveNavIndicator(link) {
