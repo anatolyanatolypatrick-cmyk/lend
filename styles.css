@@ -2763,11 +2763,11 @@ h1 span {
 
   .hero-center {
     min-height: 100svh;
-    padding: 124px 0 44px;
+    padding: 138px 0 34px;
   }
 
   .hero-actions {
-    margin-top: clamp(34px, 7vh, 68px);
+    margin-top: clamp(48px, 8svh, 86px);
   }
 
   .hero-arc,
@@ -2885,7 +2885,7 @@ h1 span {
   .hero-actions {
     flex-direction: row;
     gap: 10px;
-    margin-top: clamp(118px, 18svh, 188px);
+    margin-top: clamp(148px, 21svh, 228px);
     width: 100%;
   }
 
