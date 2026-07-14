@@ -14,12 +14,14 @@ function closeMobileMenu() {
 
   siteHeader.classList.remove("is-menu-open");
   mobileMenuToggle.setAttribute("aria-expanded", "false");
+  window.requestAnimationFrame(updateHeaderTheme);
 }
 
 if (siteHeader && mobileMenuToggle) {
   mobileMenuToggle.addEventListener("click", () => {
     const isOpen = siteHeader.classList.toggle("is-menu-open");
     mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+    window.requestAnimationFrame(updateHeaderTheme);
   });
 
   document.addEventListener("click", (event) => {
@@ -43,8 +45,18 @@ function updateHeaderTheme() {
   }
 
   const headerRect = siteHeader.getBoundingClientRect();
-  const underHeader = document.elementFromPoint(window.innerWidth / 2, Math.min(window.innerHeight - 1, headerRect.bottom + 8));
-  const isOnLightSurface = Boolean(underHeader?.closest(".light-surface"));
+  const probeX = window.innerWidth / 2;
+  const probeY = Math.min(window.innerHeight - 1, headerRect.bottom + 8);
+  const stack = document.elementsFromPoint
+    ? document.elementsFromPoint(probeX, probeY)
+    : [document.elementFromPoint(probeX, probeY)].filter(Boolean);
+  const isOnLightSurface = stack.some((element) => {
+    if (siteHeader.contains(element) || mobileNav?.contains(element)) {
+      return false;
+    }
+
+    return Boolean(element.closest(".light-surface"));
+  });
 
   siteHeader.classList.toggle("is-on-light", isOnLightSurface);
   mobileNav?.classList.toggle("is-on-light", isOnLightSurface);

@@ -2673,14 +2673,14 @@ h1 span {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    left: var(--page-gutter);
     max-width: 280px;
     opacity: 0;
     padding: 10px;
     pointer-events: none;
     position: fixed;
+    right: var(--page-gutter);
     top: 78px;
-    transform: translateX(-12px) translateY(-8px) scale(0.98);
+    transform: translateX(12px) translateY(-8px) scale(0.98);
     transition: opacity 180ms ease, transform 220ms ease;
     width: min(52vw, 280px);
     z-index: 99;
@@ -2762,7 +2762,17 @@ h1 span {
   }
 
   .hero-center {
-    padding: 108px 0 72px;
+    min-height: 100svh;
+    padding: 124px 0 44px;
+  }
+
+  .hero-actions {
+    margin-top: clamp(34px, 7vh, 68px);
+  }
+
+  .hero-arc,
+  .scroll-cue {
+    display: none;
   }
 
   .hero-copy {
