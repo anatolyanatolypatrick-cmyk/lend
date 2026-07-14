@@ -2824,6 +2824,12 @@ h1 span {
     padding-bottom: 42px;
   }
 
+  .hero::before {
+    background-color: #000;
+    background-position: center bottom;
+    background-size: 250vw auto;
+  }
+
   .header-cta {
     font-size: 12px;
     padding: 10px 12px;
@@ -2879,6 +2885,7 @@ h1 span {
   .hero-actions {
     flex-direction: row;
     gap: 10px;
+    margin-top: clamp(76px, 13vh, 132px);
     width: 100%;
   }
 
