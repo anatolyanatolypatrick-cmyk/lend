@@ -3,7 +3,38 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const nav = document.querySelector(".nav");
 const navLinks = nav ? Array.from(nav.querySelectorAll('a[href^="#"]')) : [];
 const siteHeader = document.querySelector(".site-header");
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 let navScrollLockUntil = 0;
+
+function closeMobileMenu() {
+  if (!siteHeader || !mobileMenuToggle) {
+    return;
+  }
+
+  siteHeader.classList.remove("is-menu-open");
+  mobileMenuToggle.setAttribute("aria-expanded", "false");
+}
+
+if (siteHeader && mobileMenuToggle) {
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("is-menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!siteHeader.classList.contains("is-menu-open") || siteHeader.contains(event.target)) {
+      return;
+    }
+
+    closeMobileMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileMenu();
+    }
+  });
+}
 
 function updateHeaderTheme() {
   if (!siteHeader) {
@@ -140,6 +171,8 @@ function animateCounter(element, delay) {
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
+    closeMobileMenu();
+
     if (link.dataset.swipeTriggered === "true") {
       event.preventDefault();
       link.dataset.swipeTriggered = "false";
