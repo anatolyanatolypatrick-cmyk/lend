@@ -4316,9 +4316,7 @@ h1 span {
   .win-block--format.is-visible .format-layout,
   .access-cta.is-visible .access-kicker,
   .access-cta.is-visible .access-copy h2,
-  .access-cta.is-visible .access-copy > p,
-  .access-cta.is-visible .access-button,
-  .access-cta.is-visible .access-copy > small {
+  .access-cta.is-visible .access-copy > p {
     opacity: 0;
     transition-delay: 0ms;
   }
@@ -4334,9 +4332,7 @@ h1 span {
   }
 
   .audience-section.is-visible .audience-card:nth-child(even),
-  #inside.is-visible .analytics-board,
-  .access-cta.is-visible .access-button,
-  .access-cta.is-visible .access-copy > small {
+  #inside.is-visible .analytics-board {
     transform: translate3d(36px, 20px, 0);
   }
 
@@ -4347,9 +4343,13 @@ h1 span {
   .win-block--format.is-visible .format-layout.is-mobile-visible,
   .access-cta.is-visible .access-kicker.is-mobile-visible,
   .access-cta.is-visible .access-copy h2.is-mobile-visible,
-  .access-cta.is-visible .access-copy > p.is-mobile-visible,
-  .access-cta.is-visible .access-button.is-mobile-visible,
-  .access-cta.is-visible .access-copy > small.is-mobile-visible {
+  .access-cta.is-visible .access-copy > p.is-mobile-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .access-cta.is-visible .access-button,
+  .access-cta.is-visible .access-copy > small {
     opacity: 1;
     transform: none;
   }

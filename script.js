@@ -443,7 +443,7 @@ document.querySelectorAll(".audience-section, #inside, .win-block--format, .stra
 });
 
 if (window.matchMedia("(max-width: 860px)").matches) {
-  document.querySelectorAll(".audience-card, #inside .inside-copy, #inside .analytics-copy, #inside .analytics-board, .win-block--format .format-layout, .access-kicker, .access-copy h2, .access-copy > p, .access-button, .access-copy > small").forEach((item) => {
+  document.querySelectorAll(".audience-card, #inside .inside-copy, #inside .analytics-copy, #inside .analytics-board, .win-block--format .format-layout, .access-kicker, .access-copy h2, .access-copy > p").forEach((item) => {
     const mobileRevealObserver = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
@@ -453,7 +453,7 @@ if (window.matchMedia("(max-width: 860px)").matches) {
         item.classList.add("is-mobile-visible");
         mobileRevealObserver.disconnect();
       },
-      { rootMargin: "0px 0px -18% 0px", threshold: 0.18 },
+      { rootMargin: "0px 0px 26% 0px", threshold: 0.02 },
     );
 
     mobileRevealObserver.observe(item);
