@@ -1282,8 +1282,8 @@ h1 span {
     height: clamp(460px, 96vw, 640px);
     justify-self: center;
     margin: 8px auto 12px;
-    mask-image: linear-gradient(180deg, #000 0%, #000 94%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 97%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 97%, transparent 100%);
     order: 4;
     overflow: hidden;
     pointer-events: none;
@@ -1299,9 +1299,11 @@ h1 span {
 
   .access-button {
     order: 5;
+    overflow: hidden;
+    padding-left: 6px;
     position: relative;
     z-index: 5;
-    min-width: min(330px, 100%);
+    width: min(330px, 100%);
   }
 
   .access-copy > small {
@@ -4283,11 +4285,11 @@ h1 span {
 
 @media (max-width: 860px) {
   .plans-market-texture {
-    background-position: center 40px;
+    background-position: center 120px;
     background-size: 150% 118%;
-    mask-image: radial-gradient(ellipse 88% 82% at 50% 42%, rgba(0, 0, 0, 0.72) 8%, rgba(0, 0, 0, 0.42) 46%, rgba(0, 0, 0, 0.18) 72%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 88% 82% at 50% 42%, rgba(0, 0, 0, 0.72) 8%, rgba(0, 0, 0, 0.42) 46%, rgba(0, 0, 0, 0.18) 72%, transparent 100%);
-    opacity: 0.46;
+    mask-image: linear-gradient(180deg, transparent 0 128px, rgba(0, 0, 0, 0.16) 190px, rgba(0, 0, 0, 0.46) 44%, rgba(0, 0, 0, 0.18) 76%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0 128px, rgba(0, 0, 0, 0.16) 190px, rgba(0, 0, 0, 0.46) 44%, rgba(0, 0, 0, 0.18) 76%, transparent 100%);
+    opacity: 0.42;
   }
 
   .plans-candles {
@@ -4318,7 +4320,7 @@ h1 span {
   .pricing-card--pro {
     height: auto;
     justify-self: stretch;
-    margin-left: 0;
+    margin: 18px 0 0;
     min-height: 560px;
     padding: 36px 26px 30px;
     width: 100%;
@@ -4342,7 +4344,10 @@ h1 span {
   }
 
   .access-kicker,
-  .access-copy h2,
+  .access-copy h2 {
+    transform: translate3d(36px, 20px, 0);
+  }
+
   .access-copy > p {
     transform: translate3d(-36px, 20px, 0);
   }
@@ -4367,16 +4372,22 @@ h1 span {
   .audience-section.is-visible .audience-card:nth-child(odd),
   #inside.is-visible .inside-copy,
   #inside.is-visible .analytics-copy,
-  .win-block--format.is-visible .format-layout,
-  .access-cta.is-visible .access-kicker,
-  .access-cta.is-visible .access-copy h2,
-  .access-cta.is-visible .access-copy > p {
+  .win-block--format.is-visible .format-layout {
     transform: translate3d(-36px, 20px, 0);
   }
 
   .audience-section.is-visible .audience-card:nth-child(even),
   #inside.is-visible .analytics-board {
     transform: translate3d(36px, 20px, 0);
+  }
+
+  .access-cta.is-visible .access-kicker,
+  .access-cta.is-visible .access-copy h2 {
+    transform: translate3d(36px, 20px, 0);
+  }
+
+  .access-cta.is-visible .access-copy > p {
+    transform: translate3d(-36px, 20px, 0);
   }
 
   .audience-section.is-visible .audience-card.is-mobile-visible,
