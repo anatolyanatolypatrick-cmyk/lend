@@ -442,6 +442,24 @@ document.querySelectorAll(".audience-section, #inside, .win-block--format, .stra
   sectionRevealObserver.observe(section);
 });
 
+if (window.matchMedia("(max-width: 860px)").matches) {
+  document.querySelectorAll(".audience-card, #inside .inside-copy, #inside .analytics-copy, #inside .analytics-board, .win-block--format .format-layout, .access-kicker, .access-copy h2, .access-copy > p, .access-button, .access-copy > small").forEach((item) => {
+    const mobileRevealObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        item.classList.add("is-mobile-visible");
+        mobileRevealObserver.disconnect();
+      },
+      { rootMargin: "0px 0px -18% 0px", threshold: 0.18 },
+    );
+
+    mobileRevealObserver.observe(item);
+  });
+}
+
 if (riskPanel) {
   const riskRevealObserver = new IntersectionObserver(
     ([entry]) => {
