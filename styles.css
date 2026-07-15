@@ -1279,22 +1279,22 @@ h1 span {
   .phone-stage {
     grid-column: auto;
     grid-row: auto;
-    height: clamp(390px, 78vw, 540px);
+    height: clamp(460px, 96vw, 640px);
     justify-self: center;
     margin: 8px auto 28px;
-    mask-image: linear-gradient(180deg, #000 0%, #000 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 94%, transparent 100%);
     order: 4;
     overflow: hidden;
     pointer-events: none;
-    width: min(520px, 96vw);
+    width: min(540px, 98vw);
   }
 
   .phone-cutout {
     left: 50%;
-    top: -108px;
-    transform: translateX(-57%);
-    width: min(500px, 98vw);
+    top: -92px;
+    transform: translateX(-56%);
+    width: min(520px, 100vw);
   }
 
   .access-button {
