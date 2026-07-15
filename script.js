@@ -534,7 +534,7 @@ if (marketBriefGrid && marketBriefRows.length) {
   });
 }
 
-document.querySelectorAll(".audience-section, #inside, .win-block--format, .strategy-section, .plans-section").forEach((section) => {
+document.querySelectorAll(".audience-section, #inside, .win-block--format, .strategy-section, .plans-section, .faq-section").forEach((section) => {
   const sectionRevealObserver = new IntersectionObserver(
     ([entry]) => {
       if (!entry.isIntersecting) {

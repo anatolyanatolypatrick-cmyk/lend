@@ -4071,7 +4071,7 @@ h1 span {
 
   .audience-card {
     aspect-ratio: auto;
-    min-height: 240px;
+    min-height: 214px;
     padding: 22px;
   }
 
@@ -4083,7 +4083,7 @@ h1 span {
   }
 
   .audience-index {
-    font-size: clamp(48px, 10vw, 58px);
+    font-size: clamp(58px, 14vw, 72px);
     right: 22px;
     top: 22px;
   }
@@ -4129,7 +4129,7 @@ h1 span {
 
   .audience-card {
     border-radius: 18px;
-    min-height: 240px;
+    min-height: 214px;
     padding: 22px;
   }
 
@@ -4144,71 +4144,126 @@ h1 span {
   }
 }
 
-/* Soft directional reveal: no heavy fade, just a small entrance motion. */
+/* More deliberate reveal choreography. Containers stay stable; inner items move in sequence. */
+#inside .inside-content-layout,
+.win-block--format .format-layout,
+.strategy-section .strategy-steps,
+.plans-section .pricing-grid {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 .audience-heading,
 .audience-card,
 #inside .inside-copy,
-#inside .inside-content-layout,
-.win-block--format .format-layout,
+#inside .analytics-copy,
+#inside .analytics-board,
+.win-block--format .format-copy,
+.win-block--format .market-brief-row,
 .strategy-section .section-kicker,
 .strategy-section h2,
-.strategy-section .strategy-steps,
+.strategy-section .strategy-steps article,
 .strategy-section .strategy-intro,
 .plans-section .section-kicker,
 .plans-section h2,
-.plans-section .pricing-grid {
-  opacity: 0.96;
-  transform: translate3d(0, 18px, 0);
-  transition: opacity 260ms ease, transform 520ms cubic-bezier(0.18, 0.84, 0.2, 1);
+.plans-section .pricing-card,
+.faq-section .section-kicker,
+.faq-section h2,
+.faq-section .faq-item {
+  opacity: 0.78;
+  transform: translate3d(0, 30px, 0);
+  transition:
+    opacity 420ms ease,
+    transform 760ms cubic-bezier(0.18, 0.84, 0.2, 1);
 }
 
+.audience-heading,
 .audience-card:nth-child(odd),
 #inside .inside-copy,
+#inside .analytics-copy,
+.win-block--format .format-copy,
+.win-block--format .market-brief-row:nth-child(odd),
 .strategy-section .section-kicker,
-.strategy-section .strategy-intro,
-.plans-section .section-kicker {
-  transform: translate3d(-26px, 10px, 0);
+.strategy-section .strategy-steps article:nth-child(odd),
+.plans-section .section-kicker,
+.plans-section .pricing-card:nth-child(odd),
+.faq-section .section-kicker,
+.faq-section .faq-item:nth-child(odd) {
+  transform: translate3d(-34px, 18px, 0);
 }
 
 .audience-card:nth-child(even),
-#inside .inside-content-layout,
-.win-block--format .format-layout,
+#inside .analytics-board,
+.win-block--format .market-brief-row:nth-child(even),
 .strategy-section h2,
-.strategy-section .strategy-steps,
+.strategy-section .strategy-steps article:nth-child(even),
+.strategy-section .strategy-intro,
 .plans-section h2,
-.plans-section .pricing-grid {
-  transform: translate3d(26px, 10px, 0);
+.plans-section .pricing-card:nth-child(even),
+.faq-section h2,
+.faq-section .faq-item:nth-child(even) {
+  transform: translate3d(34px, 18px, 0);
 }
 
 .audience-section.is-visible .audience-heading,
 .audience-section.is-visible .audience-card,
 #inside.is-visible .inside-copy,
-#inside.is-visible .inside-content-layout,
-.win-block--format.is-visible .format-layout,
+#inside.is-visible .analytics-copy,
+#inside.is-visible .analytics-board,
+.win-block--format.is-visible .format-copy,
+.win-block--format.is-visible .market-brief-row,
 .strategy-section.is-visible .section-kicker,
 .strategy-section.is-visible h2,
-.strategy-section.is-visible .strategy-steps,
+.strategy-section.is-visible .strategy-steps article,
 .strategy-section.is-visible .strategy-intro,
 .plans-section.is-visible .section-kicker,
 .plans-section.is-visible h2,
-.plans-section.is-visible .pricing-grid {
+.plans-section.is-visible .pricing-card,
+.faq-section.is-visible .section-kicker,
+.faq-section.is-visible h2,
+.faq-section.is-visible .faq-item {
   opacity: 1;
   transform: none;
 }
 
-.audience-section.is-visible .audience-card:nth-child(2),
+.audience-section.is-visible .audience-card:nth-child(1),
+#inside.is-visible .analytics-copy,
+.win-block--format.is-visible .format-copy,
 .strategy-section.is-visible h2,
-.plans-section.is-visible h2 {
-  transition-delay: 45ms;
+.plans-section.is-visible h2,
+.faq-section.is-visible h2 {
+  transition-delay: 120ms;
+}
+
+.audience-section.is-visible .audience-card:nth-child(2),
+#inside.is-visible .analytics-board,
+.win-block--format.is-visible .market-brief-row:nth-child(1),
+.strategy-section.is-visible .strategy-steps article:nth-child(1),
+.plans-section.is-visible .pricing-card:nth-child(1),
+.faq-section.is-visible .faq-item:nth-child(1) {
+  transition-delay: 240ms;
 }
 
 .audience-section.is-visible .audience-card:nth-child(3),
-.strategy-section.is-visible .strategy-steps,
-.plans-section.is-visible .pricing-grid {
-  transition-delay: 90ms;
+.win-block--format.is-visible .market-brief-row:nth-child(2),
+.strategy-section.is-visible .strategy-steps article:nth-child(2),
+.plans-section.is-visible .pricing-card:nth-child(2),
+.faq-section.is-visible .faq-item:nth-child(2) {
+  transition-delay: 360ms;
 }
 
 .audience-section.is-visible .audience-card:nth-child(4),
-.strategy-section.is-visible .strategy-intro {
-  transition-delay: 135ms;
+.win-block--format.is-visible .market-brief-row:nth-child(3),
+.strategy-section.is-visible .strategy-steps article:nth-child(3),
+.plans-section.is-visible .pricing-card:nth-child(3),
+.faq-section.is-visible .faq-item:nth-child(3) {
+  transition-delay: 480ms;
+}
+
+.win-block--format.is-visible .market-brief-row:nth-child(4),
+.strategy-section.is-visible .strategy-steps article:nth-child(4),
+.strategy-section.is-visible .strategy-intro,
+.faq-section.is-visible .faq-item:nth-child(4) {
+  transition-delay: 600ms;
 }
