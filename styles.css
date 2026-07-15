@@ -4073,9 +4073,46 @@ h1 span {
   display: none !important;
 }
 
+.section-title-icon > img,
+.section-kicker > span > .section-title-icon > img {
+  display: block !important;
+  filter:
+    grayscale(1)
+    brightness(0.72)
+    contrast(0.88)
+    opacity(0.82)
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.84))
+    drop-shadow(0 3px 5px rgba(60, 78, 92, 0.16));
+  height: 24px;
+  left: 50%;
+  object-fit: contain;
+  opacity: 0.92;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  z-index: 2;
+}
+
+#plans .section-kicker--dark > span > .section-title-icon > img {
+  filter:
+    invert(52%) sepia(97%) saturate(1972%) hue-rotate(174deg) brightness(104%) contrast(101%)
+    drop-shadow(0 1px 0 rgba(213, 246, 255, 0.24))
+    drop-shadow(0 4px 10px rgba(13, 136, 213, 0.44));
+  opacity: 1;
+}
+
 @media (max-width: 860px) {
+  .audience-section {
+    padding-top: 76px;
+  }
+
   #inside.win-block {
-    padding-top: 38px;
+    padding-top: 24px;
+  }
+
+  .strategy-section {
+    padding-top: 40px;
   }
 
   .audience-grid {

@@ -418,6 +418,8 @@ proPlan?.querySelectorAll("[data-duration]").forEach((button) => {
   });
 });
 
+const isMobileReveal = window.matchMedia("(max-width: 860px)").matches;
+
 document.querySelectorAll(".audience-section, #inside, .win-block--format, .strategy-section, .plans-section, .faq-section").forEach((section) => {
   const sectionRevealObserver = new IntersectionObserver(
     ([entry]) => {
@@ -436,13 +438,15 @@ document.querySelectorAll(".audience-section, #inside, .win-block--format, .stra
       section.classList.add("is-visible");
       sectionRevealObserver.disconnect();
     },
-    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+    isMobileReveal
+      ? { rootMargin: "0px 0px 22% 0px", threshold: 0.02 }
+      : { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
   );
 
   sectionRevealObserver.observe(section);
 });
 
-if (window.matchMedia("(max-width: 860px)").matches) {
+if (isMobileReveal) {
   document.querySelectorAll(".audience-card, #inside .inside-copy, #inside .analytics-copy, #inside .analytics-board, .win-block--format .format-layout, .access-kicker, .access-copy h2, .access-copy > p").forEach((item) => {
     const mobileRevealObserver = new IntersectionObserver(
       ([entry]) => {
@@ -453,7 +457,7 @@ if (window.matchMedia("(max-width: 860px)").matches) {
         item.classList.add("is-mobile-visible");
         mobileRevealObserver.disconnect();
       },
-      { rootMargin: "0px 0px 26% 0px", threshold: 0.02 },
+      { rootMargin: "0px 0px 34% 0px", threshold: 0.02 },
     );
 
     mobileRevealObserver.observe(item);
@@ -470,7 +474,9 @@ if (riskPanel) {
       riskPanel.classList.add("is-visible");
       riskRevealObserver.disconnect();
     },
-    { rootMargin: "0px 0px -18% 0px", threshold: 0.38 },
+    isMobileReveal
+      ? { rootMargin: "0px 0px -8% 0px", threshold: 0.28 }
+      : { rootMargin: "0px 0px -18% 0px", threshold: 0.38 },
   );
 
   riskRevealObserver.observe(riskPanel);
