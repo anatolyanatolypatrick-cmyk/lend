@@ -4063,7 +4063,10 @@ h1 span {
 .strategy-section .section-kicker,
 .strategy-section h2,
 .strategy-section .strategy-steps,
-.strategy-section .strategy-intro {
+.strategy-section .strategy-intro,
+.plans-section .section-kicker,
+.plans-section h2,
+.plans-section .pricing-grid {
   opacity: 0;
   transform: translateY(18px);
 }
@@ -4072,7 +4075,10 @@ h1 span {
 .strategy-section.is-visible .section-kicker,
 .strategy-section.is-visible h2,
 .strategy-section.is-visible .strategy-steps,
-.strategy-section.is-visible .strategy-intro {
+.strategy-section.is-visible .strategy-intro,
+.plans-section.is-visible .section-kicker,
+.plans-section.is-visible h2,
+.plans-section.is-visible .pricing-grid {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 560ms ease, transform 620ms ease;
@@ -4090,14 +4096,22 @@ h1 span {
   transition-delay: 190ms;
 }
 
+.plans-section.is-visible h2 {
+  transition-delay: 70ms;
+}
+
+.plans-section.is-visible .pricing-grid {
+  transition-delay: 140ms;
+}
+
 @media (max-width: 860px) {
   #inside.win-block {
-    padding-top: 56px;
+    padding-top: 38px;
   }
 }
 
 @media (max-width: 560px) {
   #inside.win-block {
-    padding-top: 46px;
+    padding-top: 30px;
   }
 }
