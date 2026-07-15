@@ -534,13 +534,29 @@ if (marketBriefGrid && marketBriefRows.length) {
   });
 }
 
-if (insideSection) {
-  insideSection.querySelectorAll(".inside-background-chart").forEach((backgroundChart) => {
-    if (!backgroundChart.getAttribute("src")) {
-      backgroundChart.src = backgroundChart.dataset.src;
-    }
-  });
-}
+document.querySelectorAll(".audience-section, #inside, .win-block--format, .strategy-section, .plans-section").forEach((section) => {
+  const sectionRevealObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      if (section === insideSection) {
+        insideSection.querySelectorAll(".inside-background-chart").forEach((backgroundChart) => {
+          if (!backgroundChart.getAttribute("src")) {
+            backgroundChart.src = backgroundChart.dataset.src;
+          }
+        });
+      }
+
+      section.classList.add("is-visible");
+      sectionRevealObserver.disconnect();
+    },
+    { rootMargin: "0px 0px 18% 0px", threshold: 0.03 },
+  );
+
+  sectionRevealObserver.observe(section);
+});
 
 if (riskPanel) {
   const riskRevealObserver = new IntersectionObserver(

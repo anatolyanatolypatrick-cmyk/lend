@@ -4065,21 +4065,21 @@ h1 span {
   }
 
   .audience-grid {
-    gap: 12px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .audience-card {
-    aspect-ratio: 1 / 1;
-    min-height: 0;
-    padding: 16px;
+    aspect-ratio: auto;
+    min-height: 228px;
+    padding: 20px;
   }
 
   .audience-label {
-    font-size: 10px;
-    line-height: 1.15;
-    margin-right: 42px;
-    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 1.2;
+    margin-right: 58px;
+    padding: 7px 10px;
   }
 
   .audience-index {
@@ -4089,19 +4089,19 @@ h1 span {
   }
 
   .audience-content {
-    bottom: 16px;
-    left: 16px;
-    max-width: calc(100% - 32px);
+    bottom: 20px;
+    left: 20px;
+    max-width: calc(100% - 40px);
   }
 
   .audience-content h3 {
-    font-size: clamp(18px, 5vw, 22px);
-    margin-bottom: 7px;
+    font-size: clamp(22px, 6vw, 26px);
+    margin-bottom: 8px;
   }
 
   .audience-content p {
-    font-size: clamp(11px, 3.15vw, 13px);
-    line-height: 1.34;
+    font-size: 13px;
+    line-height: 1.45;
   }
 
   .analytics-board .board-grid {
@@ -4124,12 +4124,13 @@ h1 span {
   }
 
   .audience-grid {
-    gap: 10px;
+    gap: 13px;
   }
 
   .audience-card {
     border-radius: 18px;
-    padding: 14px;
+    min-height: 218px;
+    padding: 18px;
   }
 
   .audience-label {
@@ -4137,13 +4138,13 @@ h1 span {
   }
 
   .audience-content {
-    bottom: 14px;
-    left: 14px;
-    max-width: calc(100% - 28px);
+    bottom: 18px;
+    left: 18px;
+    max-width: calc(100% - 36px);
   }
 }
 
-/* Disable section reveal animations; keep only the hero/header and access-phone motion. */
+/* Soft directional reveal: no heavy fade, just a small entrance motion. */
 .audience-heading,
 .audience-card,
 #inside .inside-copy,
@@ -4156,7 +4157,58 @@ h1 span {
 .plans-section .section-kicker,
 .plans-section h2,
 .plans-section .pricing-grid {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
+  opacity: 0.9;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 320ms ease, transform 440ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.audience-card:nth-child(odd),
+#inside .inside-copy,
+.strategy-section .section-kicker,
+.strategy-section .strategy-intro,
+.plans-section .section-kicker {
+  transform: translate3d(-14px, 6px, 0);
+}
+
+.audience-card:nth-child(even),
+#inside .inside-content-layout,
+.win-block--format .format-layout,
+.strategy-section h2,
+.strategy-section .strategy-steps,
+.plans-section h2,
+.plans-section .pricing-grid {
+  transform: translate3d(14px, 6px, 0);
+}
+
+.audience-section.is-visible .audience-heading,
+.audience-section.is-visible .audience-card,
+#inside.is-visible .inside-copy,
+#inside.is-visible .inside-content-layout,
+.win-block--format.is-visible .format-layout,
+.strategy-section.is-visible .section-kicker,
+.strategy-section.is-visible h2,
+.strategy-section.is-visible .strategy-steps,
+.strategy-section.is-visible .strategy-intro,
+.plans-section.is-visible .section-kicker,
+.plans-section.is-visible h2,
+.plans-section.is-visible .pricing-grid {
+  opacity: 1;
+  transform: none;
+}
+
+.audience-section.is-visible .audience-card:nth-child(2),
+.strategy-section.is-visible h2,
+.plans-section.is-visible h2 {
+  transition-delay: 45ms;
+}
+
+.audience-section.is-visible .audience-card:nth-child(3),
+.strategy-section.is-visible .strategy-steps,
+.plans-section.is-visible .pricing-grid {
+  transition-delay: 90ms;
+}
+
+.audience-section.is-visible .audience-card:nth-child(4),
+.strategy-section.is-visible .strategy-intro {
+  transition-delay: 135ms;
 }
