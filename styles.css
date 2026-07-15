@@ -4058,3 +4058,46 @@ h1 span {
   content: none !important;
   display: none !important;
 }
+
+.win-block--format .format-layout,
+.strategy-section .section-kicker,
+.strategy-section h2,
+.strategy-section .strategy-steps,
+.strategy-section .strategy-intro {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.win-block--format.is-visible .format-layout,
+.strategy-section.is-visible .section-kicker,
+.strategy-section.is-visible h2,
+.strategy-section.is-visible .strategy-steps,
+.strategy-section.is-visible .strategy-intro {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 560ms ease, transform 620ms ease;
+}
+
+.strategy-section.is-visible h2 {
+  transition-delay: 70ms;
+}
+
+.strategy-section.is-visible .strategy-steps {
+  transition-delay: 140ms;
+}
+
+.strategy-section.is-visible .strategy-intro {
+  transition-delay: 190ms;
+}
+
+@media (max-width: 860px) {
+  #inside.win-block {
+    padding-top: 56px;
+  }
+}
+
+@media (max-width: 560px) {
+  #inside.win-block {
+    padding-top: 46px;
+  }
+}

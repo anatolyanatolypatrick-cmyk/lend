@@ -565,11 +565,27 @@ if (insideSection) {
       insideSection.classList.add("is-visible");
       insideRevealObserver.disconnect();
     },
-    { rootMargin: "-12% 0px -18% 0px", threshold: 0.22 },
+    { rootMargin: "0px 0px 22% 0px", threshold: 0.04 },
   );
 
   insideRevealObserver.observe(insideSection);
 }
+
+document.querySelectorAll(".win-block--format, .strategy-section").forEach((section) => {
+  const sectionRevealObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      section.classList.add("is-visible");
+      sectionRevealObserver.disconnect();
+    },
+    { rootMargin: "0px 0px 16% 0px", threshold: 0.06 },
+  );
+
+  sectionRevealObserver.observe(section);
+});
 
 if (accessSection) {
   const accessRevealObserver = new IntersectionObserver(
