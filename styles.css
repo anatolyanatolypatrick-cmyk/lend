@@ -1245,36 +1245,68 @@ h1 span {
 @media (max-width: 980px) {
   .access-cta,
   .access-cta-inner {
-    min-height: 920px;
+    min-height: 0;
   }
 
   .access-cta-inner {
-    grid-template-columns: 1fr;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 78px 0 64px;
   }
 
   .access-copy {
-    grid-column: auto;
-    grid-row: auto;
+    display: contents;
     justify-self: center;
-    padding: 78px 0 20px;
     text-align: center;
+  }
+
+  .access-kicker {
+    order: 1;
+  }
+
+  .access-copy h2 {
+    order: 2;
   }
 
   .access-copy > p {
     margin-left: auto;
     margin-right: auto;
+    max-width: min(100%, 560px);
+    order: 3;
   }
 
   .phone-stage {
     grid-column: auto;
     grid-row: auto;
-    height: 580px;
+    height: clamp(320px, 62vw, 430px);
     justify-self: center;
-    width: min(680px, 94vw);
+    margin: 8px auto 22px;
+    mask-image: linear-gradient(180deg, #000 0%, #000 76%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 76%, transparent 100%);
+    order: 4;
+    overflow: hidden;
+    pointer-events: none;
+    width: min(430px, 84vw);
   }
 
   .phone-cutout {
-    top: -150px;
+    left: 50%;
+    top: -92px;
+    transform: translateX(-50%);
+    width: min(390px, 82vw);
+  }
+
+  .access-button {
+    order: 5;
+    position: relative;
+    z-index: 5;
+  }
+
+  .access-copy > small {
+    order: 6;
+    position: relative;
+    z-index: 5;
   }
 }
 
@@ -1623,17 +1655,6 @@ h1 span {
   color: rgba(27, 35, 44, 0.72);
   font-size: 14px;
   line-height: 1.52;
-}
-
-.market-brief-grid.has-focus-motion .market-brief-row {
-  transform: translateY(0);
-  transition: transform 300ms cubic-bezier(.2, .8, .2, 1);
-  will-change: transform;
-}
-
-.market-brief-grid.has-focus-motion .market-brief-row.is-focused {
-  transform: translateY(-5px);
-  z-index: 2;
 }
 
 .format-layout {
@@ -2169,18 +2190,6 @@ h1 span {
   min-height: 68px;
   padding: 8px 14px 8px 9px;
   border-radius: 999px;
-}
-
-.module-grid.has-focus-motion .module-card {
-  transform: translateY(0);
-  transform-origin: center;
-  transition: transform 320ms cubic-bezier(.2, .8, .2, 1);
-  will-change: transform;
-}
-
-.module-grid.has-focus-motion .module-card.is-focused {
-  transform: translateY(-5px);
-  z-index: 2;
 }
 
 :root {
@@ -4146,7 +4155,6 @@ h1 span {
 
 /* More deliberate reveal choreography. Containers stay stable; inner items move in sequence. */
 #inside .inside-content-layout,
-.win-block--format .format-layout,
 .strategy-section .strategy-steps,
 .plans-section .pricing-grid {
   opacity: 1 !important;
@@ -4159,8 +4167,7 @@ h1 span {
 #inside .inside-copy,
 #inside .analytics-copy,
 #inside .analytics-board,
-.win-block--format .format-copy,
-.win-block--format .market-brief-row,
+.win-block--format .format-layout,
 .strategy-section .section-kicker,
 .strategy-section h2,
 .strategy-section .strategy-steps article,
@@ -4171,10 +4178,10 @@ h1 span {
 .faq-section .section-kicker,
 .faq-section h2,
 .faq-section .faq-item {
-  opacity: 0.78;
+  opacity: 0.35;
   transform: translate3d(0, 30px, 0);
   transition:
-    opacity 420ms ease,
+    opacity 520ms ease,
     transform 760ms cubic-bezier(0.18, 0.84, 0.2, 1);
 }
 
@@ -4182,8 +4189,7 @@ h1 span {
 .audience-card:nth-child(odd),
 #inside .inside-copy,
 #inside .analytics-copy,
-.win-block--format .format-copy,
-.win-block--format .market-brief-row:nth-child(odd),
+.win-block--format .format-layout,
 .strategy-section .section-kicker,
 .strategy-section .strategy-steps article:nth-child(odd),
 .plans-section .section-kicker,
@@ -4195,7 +4201,6 @@ h1 span {
 
 .audience-card:nth-child(even),
 #inside .analytics-board,
-.win-block--format .market-brief-row:nth-child(even),
 .strategy-section h2,
 .strategy-section .strategy-steps article:nth-child(even),
 .strategy-section .strategy-intro,
@@ -4211,8 +4216,7 @@ h1 span {
 #inside.is-visible .inside-copy,
 #inside.is-visible .analytics-copy,
 #inside.is-visible .analytics-board,
-.win-block--format.is-visible .format-copy,
-.win-block--format.is-visible .market-brief-row,
+.win-block--format.is-visible .format-layout,
 .strategy-section.is-visible .section-kicker,
 .strategy-section.is-visible h2,
 .strategy-section.is-visible .strategy-steps article,
@@ -4229,7 +4233,7 @@ h1 span {
 
 .audience-section.is-visible .audience-card:nth-child(1),
 #inside.is-visible .analytics-copy,
-.win-block--format.is-visible .format-copy,
+.win-block--format.is-visible .format-layout,
 .strategy-section.is-visible h2,
 .plans-section.is-visible h2,
 .faq-section.is-visible h2 {
@@ -4238,7 +4242,6 @@ h1 span {
 
 .audience-section.is-visible .audience-card:nth-child(2),
 #inside.is-visible .analytics-board,
-.win-block--format.is-visible .market-brief-row:nth-child(1),
 .strategy-section.is-visible .strategy-steps article:nth-child(1),
 .plans-section.is-visible .pricing-card:nth-child(1),
 .faq-section.is-visible .faq-item:nth-child(1) {
@@ -4246,7 +4249,6 @@ h1 span {
 }
 
 .audience-section.is-visible .audience-card:nth-child(3),
-.win-block--format.is-visible .market-brief-row:nth-child(2),
 .strategy-section.is-visible .strategy-steps article:nth-child(2),
 .plans-section.is-visible .pricing-card:nth-child(2),
 .faq-section.is-visible .faq-item:nth-child(2) {
@@ -4254,14 +4256,12 @@ h1 span {
 }
 
 .audience-section.is-visible .audience-card:nth-child(4),
-.win-block--format.is-visible .market-brief-row:nth-child(3),
 .strategy-section.is-visible .strategy-steps article:nth-child(3),
 .plans-section.is-visible .pricing-card:nth-child(3),
 .faq-section.is-visible .faq-item:nth-child(3) {
   transition-delay: 480ms;
 }
 
-.win-block--format.is-visible .market-brief-row:nth-child(4),
 .strategy-section.is-visible .strategy-steps article:nth-child(4),
 .strategy-section.is-visible .strategy-intro,
 .faq-section.is-visible .faq-item:nth-child(4) {

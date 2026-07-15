@@ -325,6 +325,10 @@ if (swipeAccessButton) {
       return;
     }
 
+    if (!swipeMoved) {
+      goToAccessTarget();
+    }
+
     resetSwipe();
   });
 
@@ -357,8 +361,6 @@ window.addEventListener("load", () => {
 
   updateNavForScroll();
   updateHeaderTheme();
-  updateMobileModuleFocus();
-  updateMobileBriefFocus();
 });
 
 window.addEventListener("resize", () => {
@@ -369,27 +371,18 @@ window.addEventListener("resize", () => {
   }
 
   updateHeaderTheme();
-  updateMobileModuleFocus();
-  updateMobileBriefFocus();
 });
 
 window.addEventListener("scroll", () => {
   updateNavForScroll();
   updateHeaderTheme();
-  updateMobileModuleFocus();
-  updateMobileBriefFocus();
 }, { passive: true });
 
 const insideSection = document.querySelector("#inside");
 const audienceSection = document.querySelector("#audience");
 const accessSection = document.querySelector("#access");
 const proPlan = document.querySelector("[data-pro-plan]");
-const moduleGrid = insideSection?.querySelector(".module-grid");
-const moduleCards = moduleGrid ? Array.from(moduleGrid.querySelectorAll(".module-card")) : [];
 const riskPanel = insideSection?.querySelector(".risk-panel");
-const marketBriefGrid = document.querySelector(".market-brief-grid");
-const marketBriefRows = marketBriefGrid ? Array.from(marketBriefGrid.querySelectorAll(".market-brief-row")) : [];
-const coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)");
 
 const proPlanOptions = {
   quarter: {
@@ -424,115 +417,6 @@ proPlan?.querySelectorAll("[data-duration]").forEach((button) => {
     proPlan.querySelector("[data-pro-button-label]").textContent = option.button;
   });
 });
-
-function setFocusedModule(card) {
-  if (!moduleCards.length) {
-    return;
-  }
-
-  moduleGrid.classList.toggle("has-active-focus", Boolean(card));
-  moduleCards.forEach((item) => item.classList.toggle("is-focused", item === card));
-}
-
-function updateMobileModuleFocus() {
-  if (!coarsePointer.matches || !moduleCards.length) {
-    return;
-  }
-
-  const viewportCenter = window.innerHeight / 2;
-  const visibleCards = moduleCards.filter((card) => {
-    const rect = card.getBoundingClientRect();
-    return rect.bottom > 0 && rect.top < window.innerHeight;
-  });
-
-  if (!visibleCards.length) {
-    return;
-  }
-
-  const closestCard = visibleCards.reduce((closest, card) => {
-    const closestRect = closest.getBoundingClientRect();
-    const cardRect = card.getBoundingClientRect();
-    const closestDistance = Math.abs((closestRect.top + closestRect.bottom) / 2 - viewportCenter);
-    const cardDistance = Math.abs((cardRect.top + cardRect.bottom) / 2 - viewportCenter);
-
-    return cardDistance < closestDistance ? card : closest;
-  });
-
-  setFocusedModule(closestCard);
-}
-
-function setFocusedBriefRow(row) {
-  if (!marketBriefRows.length) {
-    return;
-  }
-
-  marketBriefRows.forEach((item) => item.classList.toggle("is-focused", item === row));
-}
-
-function updateMobileBriefFocus() {
-  if (!coarsePointer.matches || !marketBriefRows.length) {
-    return;
-  }
-
-  const viewportCenter = window.innerHeight / 2;
-  const visibleRows = marketBriefRows.filter((row) => {
-    const rect = row.getBoundingClientRect();
-    return rect.bottom > 0 && rect.top < window.innerHeight;
-  });
-
-  if (!visibleRows.length) {
-    return;
-  }
-
-  const closestRow = visibleRows.reduce((closest, row) => {
-    const closestRect = closest.getBoundingClientRect();
-    const rowRect = row.getBoundingClientRect();
-    const closestDistance = Math.abs((closestRect.top + closestRect.bottom) / 2 - viewportCenter);
-    const rowDistance = Math.abs((rowRect.top + rowRect.bottom) / 2 - viewportCenter);
-
-    return rowDistance < closestDistance ? row : closest;
-  });
-
-  setFocusedBriefRow(closestRow);
-}
-
-if (moduleGrid && moduleCards.length) {
-  moduleGrid.classList.add("has-focus-motion");
-
-  moduleCards.forEach((card) => {
-    card.addEventListener("pointerenter", () => {
-      if (!coarsePointer.matches) {
-        setFocusedModule(card);
-      }
-    });
-
-    card.addEventListener("focusin", () => setFocusedModule(card));
-  });
-
-  moduleGrid.addEventListener("pointerleave", () => {
-    if (!coarsePointer.matches) {
-      setFocusedModule(null);
-    }
-  });
-}
-
-if (marketBriefGrid && marketBriefRows.length) {
-  marketBriefGrid.classList.add("has-focus-motion");
-
-  marketBriefRows.forEach((row) => {
-    row.addEventListener("pointerenter", () => {
-      if (!coarsePointer.matches) {
-        setFocusedBriefRow(row);
-      }
-    });
-  });
-
-  marketBriefGrid.addEventListener("pointerleave", () => {
-    if (!coarsePointer.matches) {
-      setFocusedBriefRow(null);
-    }
-  });
-}
 
 document.querySelectorAll(".audience-section, #inside, .win-block--format, .strategy-section, .plans-section, .faq-section").forEach((section) => {
   const sectionRevealObserver = new IntersectionObserver(
