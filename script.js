@@ -552,7 +552,7 @@ document.querySelectorAll(".audience-section, #inside, .win-block--format, .stra
       section.classList.add("is-visible");
       sectionRevealObserver.disconnect();
     },
-    { rootMargin: "0px 0px 18% 0px", threshold: 0.03 },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
   );
 
   sectionRevealObserver.observe(section);

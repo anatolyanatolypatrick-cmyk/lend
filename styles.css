@@ -4071,37 +4071,37 @@ h1 span {
 
   .audience-card {
     aspect-ratio: auto;
-    min-height: 228px;
-    padding: 20px;
+    min-height: 240px;
+    padding: 22px;
   }
 
   .audience-label {
-    font-size: 11px;
-    line-height: 1.2;
-    margin-right: 58px;
+    font-size: 12px;
+    line-height: 1;
+    margin-right: 78px;
     padding: 7px 10px;
   }
 
   .audience-index {
-    font-size: clamp(32px, 9vw, 46px);
-    right: 14px;
-    top: 14px;
+    font-size: clamp(48px, 10vw, 58px);
+    right: 22px;
+    top: 22px;
   }
 
   .audience-content {
-    bottom: 20px;
-    left: 20px;
-    max-width: calc(100% - 40px);
+    bottom: 22px;
+    left: 22px;
+    max-width: calc(100% - 44px);
   }
 
   .audience-content h3 {
-    font-size: clamp(22px, 6vw, 26px);
-    margin-bottom: 8px;
+    font-size: clamp(23px, 6vw, 30px);
+    margin-bottom: 10px;
   }
 
   .audience-content p {
-    font-size: 13px;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .analytics-board .board-grid {
@@ -4129,18 +4129,18 @@ h1 span {
 
   .audience-card {
     border-radius: 18px;
-    min-height: 218px;
-    padding: 18px;
+    min-height: 240px;
+    padding: 22px;
   }
 
   .audience-label {
-    max-width: calc(100% - 44px);
+    max-width: none;
   }
 
   .audience-content {
-    bottom: 18px;
-    left: 18px;
-    max-width: calc(100% - 36px);
+    bottom: 22px;
+    left: 22px;
+    max-width: calc(100% - 44px);
   }
 }
 
@@ -4157,9 +4157,9 @@ h1 span {
 .plans-section .section-kicker,
 .plans-section h2,
 .plans-section .pricing-grid {
-  opacity: 0.9;
-  transform: translate3d(0, 10px, 0);
-  transition: opacity 320ms ease, transform 440ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0.96;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 260ms ease, transform 520ms cubic-bezier(0.18, 0.84, 0.2, 1);
 }
 
 .audience-card:nth-child(odd),
@@ -4167,7 +4167,7 @@ h1 span {
 .strategy-section .section-kicker,
 .strategy-section .strategy-intro,
 .plans-section .section-kicker {
-  transform: translate3d(-14px, 6px, 0);
+  transform: translate3d(-26px, 10px, 0);
 }
 
 .audience-card:nth-child(even),
@@ -4177,7 +4177,7 @@ h1 span {
 .strategy-section .strategy-steps,
 .plans-section h2,
 .plans-section .pricing-grid {
-  transform: translate3d(14px, 6px, 0);
+  transform: translate3d(26px, 10px, 0);
 }
 
 .audience-section.is-visible .audience-heading,
