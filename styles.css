@@ -4449,6 +4449,17 @@ h1 span {
     width: min(292px, 100%);
   }
 
+  .access-button::before {
+    background:
+      radial-gradient(ellipse at 52% 54%, rgba(3, 8, 13, 0.52) 0%, rgba(3, 8, 13, 0.34) 48%, rgba(3, 8, 13, 0.08) 76%, transparent 100%);
+    border-radius: inherit;
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+  }
+
   .access-button-orb {
     flex-basis: 52px;
     left: 6px;
