@@ -233,7 +233,7 @@ if (swipeAccessButton) {
   function getSwipeMax() {
     const buttonWidth = swipeAccessButton.offsetWidth;
     const orbWidth = swipeAccessButton.querySelector(".access-button-orb")?.offsetWidth || 50;
-    return Math.max(92, buttonWidth - orbWidth - 28);
+    return Math.max(92, buttonWidth - orbWidth - 12);
   }
 
   function goToAccessTarget() {
