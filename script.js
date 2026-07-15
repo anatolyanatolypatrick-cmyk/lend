@@ -386,6 +386,7 @@ const accessSection = document.querySelector("#access");
 const proPlan = document.querySelector("[data-pro-plan]");
 const moduleGrid = insideSection?.querySelector(".module-grid");
 const moduleCards = moduleGrid ? Array.from(moduleGrid.querySelectorAll(".module-card")) : [];
+const riskPanel = insideSection?.querySelector(".risk-panel");
 const marketBriefGrid = document.querySelector(".market-brief-grid");
 const marketBriefRows = marketBriefGrid ? Array.from(marketBriefGrid.querySelectorAll(".market-brief-row")) : [];
 const coarsePointer = window.matchMedia("(hover: none), (pointer: coarse)");
@@ -533,59 +534,29 @@ if (marketBriefGrid && marketBriefRows.length) {
   });
 }
 
-if (audienceSection) {
-  const audienceRevealObserver = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      audienceSection.classList.add("is-visible");
-      audienceRevealObserver.disconnect();
-    },
-    { rootMargin: "-8% 0px -14% 0px", threshold: 0.16 },
-  );
-
-  audienceRevealObserver.observe(audienceSection);
-}
-
 if (insideSection) {
-  const insideRevealObserver = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      insideSection.querySelectorAll(".inside-background-chart").forEach((backgroundChart) => {
-        if (!backgroundChart.getAttribute("src")) {
-          backgroundChart.src = backgroundChart.dataset.src;
-        }
-      });
-
-      insideSection.classList.add("is-visible");
-      insideRevealObserver.disconnect();
-    },
-    { rootMargin: "-8% 0px -14% 0px", threshold: 0.16 },
-  );
-
-  insideRevealObserver.observe(insideSection);
+  insideSection.querySelectorAll(".inside-background-chart").forEach((backgroundChart) => {
+    if (!backgroundChart.getAttribute("src")) {
+      backgroundChart.src = backgroundChart.dataset.src;
+    }
+  });
 }
 
-document.querySelectorAll(".win-block--format, .strategy-section, .plans-section").forEach((section) => {
-  const sectionRevealObserver = new IntersectionObserver(
+if (riskPanel) {
+  const riskRevealObserver = new IntersectionObserver(
     ([entry]) => {
       if (!entry.isIntersecting) {
         return;
       }
 
-      section.classList.add("is-visible");
-      sectionRevealObserver.disconnect();
+      riskPanel.classList.add("is-visible");
+      riskRevealObserver.disconnect();
     },
-    { rootMargin: "-8% 0px -14% 0px", threshold: 0.16 },
+    { rootMargin: "0px 0px -18% 0px", threshold: 0.38 },
   );
 
-  sectionRevealObserver.observe(section);
-});
+  riskRevealObserver.observe(riskPanel);
+}
 
 if (accessSection) {
   const accessRevealObserver = new IntersectionObserver(
