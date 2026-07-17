@@ -435,8 +435,8 @@ body.is-loaded .site-header {
     0 10px 28px rgba(0, 88, 160, 0.14);
   color: #ffffff;
   flex: 0 0 auto;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 300;
   justify-self: end;
   padding: 11px 20px;
   text-shadow: 0 1px 10px rgba(17, 17, 17, 0.28);
@@ -901,6 +901,236 @@ h1 span {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.fomo-section {
+  padding: 54px var(--page-gutter) clamp(44px, 5vw, 76px);
+  position: relative;
+  z-index: 1;
+}
+
+.fomo-banner {
+  background:
+    radial-gradient(42% 82% at 24% 54%, rgba(13, 136, 213, 0.34), transparent 70%),
+    radial-gradient(34% 62% at 5% 14%, rgba(86, 199, 255, 0.16), transparent 72%),
+    radial-gradient(46% 74% at 88% 16%, rgba(60, 111, 145, 0.14), transparent 70%),
+    linear-gradient(135deg, rgba(8, 17, 27, 0.96), rgba(3, 8, 13, 0.97)) padding-box,
+    var(--glass-border) border-box;
+  border: 1px solid transparent;
+  border-radius: 34px;
+  box-shadow:
+    inset 0 1px 0 rgba(126, 220, 255, 0.14),
+    inset 0 -18px 32px rgba(0, 30, 58, 0.18),
+    0 28px 80px rgba(18, 35, 52, 0.18);
+  color: #f6f9fc;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(400px, 1fr) minmax(380px, 0.92fr);
+  margin: 0 auto;
+  max-width: min(1560px, calc(100vw - var(--page-gutter) * 2));
+  min-height: 430px;
+  overflow: visible;
+  position: relative;
+}
+
+.fomo-banner::before {
+  background:
+    linear-gradient(90deg, rgba(65, 105, 134, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(65, 105, 134, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: "";
+  inset: 0;
+  border-radius: inherit;
+  mask-image: radial-gradient(ellipse 78% 72% at 30% 52%, #000 22%, rgba(0, 0, 0, 0.46) 58%, transparent 100%);
+  opacity: 0.74;
+  pointer-events: none;
+  position: absolute;
+}
+
+.fomo-banner::after {
+  background:
+    linear-gradient(135deg, transparent 0 36%, rgba(86, 199, 255, 0.2) 36.2%, transparent 37%),
+    linear-gradient(135deg, transparent 0 50%, rgba(13, 136, 213, 0.14) 50.2%, transparent 51%);
+  content: "";
+  inset: 0;
+  opacity: 0.72;
+  pointer-events: none;
+  position: absolute;
+}
+
+.fomo-copy {
+  align-self: center;
+  padding: clamp(30px, 4vw, 56px) clamp(28px, 5vw, 72px) clamp(30px, 4vw, 56px) 0;
+  position: relative;
+  transform: translateY(-14px);
+  z-index: 2;
+}
+
+.fomo-kicker {
+  color: rgba(135, 207, 246, 0.82);
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.fomo-copy h2 {
+  color: #f7fbff;
+  font-size: clamp(36px, 4vw, 66px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin: 0;
+  max-width: 660px;
+}
+
+.fomo-copy h2 span {
+  background: linear-gradient(135deg, #dff6ff 0%, #56c7ff 30%, #0d88d5 68%, #0058a0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  font-size: 1.34em;
+  line-height: 0.9;
+  margin-bottom: 8px;
+}
+
+.fomo-copy p {
+  color: rgba(226, 236, 244, 0.66);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 300;
+  line-height: 1.58;
+  margin: 12px 0 0;
+  max-width: 540px;
+}
+
+.btn.primary.fomo-cta-button {
+  background:
+    radial-gradient(circle at 28% 0%, rgba(22, 143, 216, 0.42), transparent 44%),
+    linear-gradient(135deg, rgba(14, 20, 27, 0.92), rgba(0, 88, 160, 0.78) 54%, rgba(17, 17, 17, 0.9)) padding-box,
+    var(--glass-border) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(22, 143, 216, 0.22),
+    inset 0 -10px 18px rgba(0, 30, 58, 0.26),
+    0 16px 38px rgba(0, 88, 160, 0.18);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 16px;
+  margin-top: 88px;
+  min-height: 60px;
+  min-width: 258px;
+  padding: 0 24px 0 28px;
+  text-shadow: none;
+  width: fit-content;
+}
+
+.btn.primary.fomo-cta-button > span:first-child {
+  color: #ffffff;
+  filter: none;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.btn.primary.fomo-cta-button:hover {
+  background:
+    radial-gradient(circle at 28% 0%, rgba(22, 143, 216, 0.5), transparent 44%),
+    linear-gradient(135deg, rgba(16, 26, 38, 0.94), rgba(0, 96, 172, 0.84) 54%, rgba(17, 17, 17, 0.92)) padding-box,
+    var(--glass-border) border-box;
+  box-shadow:
+    inset 0 1px 0 rgba(22, 143, 216, 0.28),
+    inset 0 -10px 18px rgba(0, 30, 58, 0.28),
+    0 18px 42px rgba(0, 88, 160, 0.24);
+  transform: translateY(-1px);
+}
+
+.btn.primary.fomo-cta-button:active {
+  filter: none;
+  transform: translateY(1px) scale(0.985);
+}
+
+.btn.primary.fomo-cta-button .hero-subscribe-trail {
+  display: inline-flex;
+  font-size: 21px;
+  font-weight: 400;
+  gap: 1px;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.btn.primary.fomo-cta-button .hero-subscribe-trail i {
+  color: rgba(225, 243, 255, 0.9);
+  font-style: normal;
+}
+
+.btn.primary.fomo-cta-button .hero-subscribe-trail i:nth-child(2) {
+  opacity: 0.56;
+}
+
+.btn.primary.fomo-cta-button .hero-subscribe-trail i:nth-child(3) {
+  opacity: 0.28;
+}
+
+.fomo-visual {
+  min-height: 420px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.fomo-visual::after {
+  background: radial-gradient(ellipse at 42% 58%, rgba(13, 136, 213, 0.2), transparent 56%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.fomo-visual img {
+  display: block;
+  bottom: 0;
+  filter: drop-shadow(24px 22px 52px rgba(0, 0, 0, 0.4));
+  height: min(680px, 178%);
+  object-fit: contain;
+  position: absolute;
+  left: clamp(8px, 1.1vw, 28px);
+  width: auto;
+  z-index: 2;
+}
+
+.fomo-mobile-robot-position {
+  display: none !important;
+}
+
+.fomo-backdrop-word {
+  color: rgba(13, 136, 213, 0.09);
+  font-size: clamp(96px, 12vw, 198px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  position: absolute;
+  left: 58%;
+  text-transform: uppercase;
+  top: 24%;
+  transform: rotate(-2deg);
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.fomo-backdrop-word::after {
+  background: radial-gradient(ellipse at center, rgba(13, 136, 213, 0.28), transparent 68%);
+  content: "";
+  filter: blur(28px);
+  inset: -28px -40px;
+  position: absolute;
+  z-index: -1;
 }
 
 .audience-card {
@@ -4103,6 +4333,147 @@ h1 span {
 }
 
 @media (max-width: 860px) {
+  .fomo-section {
+    padding-top: 112px;
+    padding-bottom: 34px;
+  }
+
+  .fomo-banner {
+    background: transparent;
+    border-radius: 26px;
+    border-color: transparent;
+    box-shadow: none;
+    clip-path: inset(-104px 0 0 0 round 26px);
+    display: block;
+    gap: 0;
+    min-height: clamp(690px, 178vw, 820px);
+    overflow: visible;
+  }
+
+  .fomo-banner::before {
+    background:
+      linear-gradient(90deg, rgba(65, 105, 134, 0.08) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(65, 105, 134, 0.06) 1px, transparent 1px),
+      radial-gradient(42% 82% at 24% 54%, rgba(13, 136, 213, 0.34), transparent 70%),
+      radial-gradient(34% 62% at 5% 14%, rgba(86, 199, 255, 0.16), transparent 72%),
+      radial-gradient(46% 74% at 88% 16%, rgba(60, 111, 145, 0.14), transparent 70%),
+      linear-gradient(135deg, rgba(8, 17, 27, 0.96), rgba(3, 8, 13, 0.97)) padding-box,
+      var(--glass-border) border-box;
+    background-size: 48px 48px, 48px 48px, auto, auto, auto, auto, auto;
+    border: 1px solid transparent;
+    box-shadow:
+      inset 0 1px 0 rgba(126, 220, 255, 0.14),
+      inset 0 -18px 32px rgba(0, 30, 58, 0.18),
+      0 28px 80px rgba(18, 35, 52, 0.18);
+    box-sizing: border-box;
+    inset: clamp(168px, 42vw, 202px) 0 0;
+    mask-image: none;
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .fomo-banner::after {
+    display: none;
+  }
+
+  .fomo-copy {
+    align-items: center;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    left: 20px;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    transform: none;
+    z-index: 4;
+  }
+
+  .fomo-kicker {
+    display: none;
+  }
+
+  .fomo-copy h2 {
+    font-size: clamp(22px, 6vw, 28px);
+    font-weight: 500;
+    line-height: 0.98;
+    max-width: 100%;
+    order: 1;
+    text-align: center;
+    transform: translateY(72px);
+  }
+
+  .fomo-copy h2 span {
+    font-size: 2.48em;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .fomo-copy p {
+    color: rgba(226, 236, 244, 0.64);
+    font-size: 11px;
+    line-height: 1.35;
+    margin: 22px auto 0;
+    max-width: 310px;
+    order: 3;
+  }
+
+  .fomo-cta-button {
+    margin-top: 24px;
+    min-height: 56px;
+    min-width: 238px;
+    order: 2;
+  }
+
+  .fomo-visual {
+    inset: 0;
+    min-height: 0;
+    overflow: visible;
+    position: absolute;
+  }
+
+  .fomo-visual::after {
+    background:
+      linear-gradient(180deg, transparent 0%, transparent 54%, rgba(3, 8, 13, 0.16) 72%, rgba(3, 8, 13, 0.9) 96%);
+    z-index: 3;
+  }
+
+  .fomo-desktop-robot {
+    display: none !important;
+  }
+
+  .fomo-mobile-robot-position {
+    bottom: 0;
+    display: block !important;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+
+  .fomo-mobile-robot-position > .fomo-mobile-robot {
+    bottom: auto;
+    display: block;
+    filter: none;
+    height: auto;
+    left: auto;
+    max-width: none;
+    object-fit: contain;
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: clamp(280px, 90vw, 430px);
+  }
+
+  .fomo-backdrop-word {
+    font-size: clamp(86px, 23vw, 128px);
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+  }
+
   .audience-section {
     padding-top: 76px;
   }
@@ -4206,6 +4577,7 @@ h1 span {
 
 .audience-heading,
 .audience-card,
+.fomo-banner,
 #inside .inside-copy,
 #inside .analytics-copy,
 #inside .analytics-board,
@@ -4298,6 +4670,7 @@ h1 span {
 
 .audience-section.is-visible .audience-heading,
 .audience-section.is-visible .audience-card,
+.fomo-section.is-visible .fomo-banner,
 #inside.is-visible .inside-copy,
 #inside.is-visible .analytics-copy,
 #inside.is-visible .analytics-board,

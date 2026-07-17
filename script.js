@@ -50,7 +50,8 @@ function updateHeaderTheme() {
   const stack = document.elementsFromPoint
     ? document.elementsFromPoint(probeX, probeY)
     : [document.elementFromPoint(probeX, probeY)].filter(Boolean);
-  const isOnLightSurface = stack.some((element) => {
+  const isOverDarkFomo = stack.some((element) => !siteHeader.contains(element) && !mobileNav?.contains(element) && Boolean(element.closest(".fomo-banner")));
+  const isOnLightSurface = !isOverDarkFomo && stack.some((element) => {
     if (siteHeader.contains(element) || mobileNav?.contains(element)) {
       return false;
     }
@@ -420,7 +421,7 @@ proPlan?.querySelectorAll("[data-duration]").forEach((button) => {
 
 const isMobileReveal = window.matchMedia("(max-width: 860px)").matches;
 
-document.querySelectorAll(".audience-section, #inside, .win-block--format, .strategy-section, .plans-section, .faq-section").forEach((section) => {
+document.querySelectorAll(".audience-section, .fomo-section, #inside, .win-block--format, .strategy-section, .plans-section, .faq-section").forEach((section) => {
   const sectionRevealObserver = new IntersectionObserver(
     ([entry]) => {
       if (!entry.isIntersecting) {
@@ -511,3 +512,20 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     });
   });
 });
+
+const fomoBanner = document.querySelector(".fomo-banner");
+const fomoScene = fomoBanner?.querySelector(".fomo-scene");
+
+if (fomoBanner && fomoScene) {
+  const resizeFomoScene = () => {
+    fomoBanner.style.setProperty("--fomo-scene-scale", String(fomoBanner.clientWidth / 390));
+  };
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(resizeFomoScene).observe(fomoBanner);
+  } else {
+    window.addEventListener("resize", resizeFomoScene);
+  }
+
+  resizeFomoScene();
+}
