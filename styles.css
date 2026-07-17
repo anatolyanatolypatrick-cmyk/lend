@@ -4334,7 +4334,8 @@ h1 span {
 
 @media (max-width: 860px) {
   .fomo-section {
-    padding-top: 112px;
+    margin-top: -64px;
+    padding-top: 6px;
     padding-bottom: 34px;
   }
 
@@ -4475,7 +4476,9 @@ h1 span {
   }
 
   .audience-section {
+    overflow: visible;
     padding-top: 76px;
+    padding-bottom: 18px;
   }
 
   #inside.win-block {
